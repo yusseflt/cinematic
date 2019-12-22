@@ -38,7 +38,10 @@ class MovieListItem extends StatelessWidget {
                 placeholder: (context, url) => Container(
                     width: 80,
                     height: 120,
-                    child: Center(child: CircularProgressIndicator())),
+                    child: Center(
+                        child: CircularProgressIndicator(
+                      backgroundColor: FULL_STAR,
+                    ))),
                 errorWidget: (context, url, error) => Container(
                     color: Colors.white24,
                     width: 80,

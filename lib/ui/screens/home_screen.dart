@@ -1,4 +1,5 @@
 import 'package:cinematic/core/models/movie_model.dart';
+import 'package:cinematic/core/utils/custom_search_delegate.dart';
 import 'package:cinematic/core/view_models/home_view_model.dart';
 import 'package:cinematic/ui/screens/search_screen.dart';
 import 'package:cinematic/ui/values/strings.dart';
@@ -40,7 +41,12 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(bottom: 20.0, left: 20, right: 20),
               child: TextField(
+                onTap: () {
+                  showSearch(
+                      context: context, delegate: CustomSearchDelegate());
+                },
                 style: TextStyle(color: Colors.white),
+                readOnly: true,
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(
                       top: 20.0, left: 15.0, bottom: 20.0, right: 15.0),

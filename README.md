@@ -1,8 +1,9 @@
-# cinematic
+# Cinematic
 
-A new Flutter project.
+Cinematic é um aplicativo desenvolvido em Flutter para o desafio de Desenvolvedor Mobile da empresa Ahgora. 
 
-## Getting Started
+
+## Começando
 
 This project is a starting point for a Flutter application.
 

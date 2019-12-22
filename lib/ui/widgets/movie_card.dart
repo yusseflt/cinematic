@@ -32,14 +32,17 @@ class MovieCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.circular(24.0),
+              borderRadius: BorderRadius.circular(60.0),
               child: CachedNetworkImage(
                 width: 160,
                 height: 210,
                 placeholder: (context, url) => Container(
                     width: 160,
                     height: 210,
-                    child: Center(child: CircularProgressIndicator())),
+                    child: Center(
+                        child: CircularProgressIndicator(
+                      backgroundColor: FULL_STAR,
+                    ))),
                 errorWidget: (context, url, error) => Container(
                     width: 160,
                     height: 210,

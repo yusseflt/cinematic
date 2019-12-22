@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: Duration(milliseconds: 1500),
     )
       ..addListener(() => setState(() {}))
       ..addStatusListener((status) {

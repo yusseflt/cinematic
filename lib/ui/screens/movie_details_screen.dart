@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cinematic/core/view_models/details_view_model.dart';
 import 'package:cinematic/ui/values/strings.dart';
 import 'package:cinematic/ui/values/values.dart';
@@ -24,13 +25,24 @@ class MovieDetailsScreen extends StatelessWidget {
                     Stack(
                       children: <Widget>[
                         Center(
-                          child: FadeInImage(
+                          child: CachedNetworkImage(
                             height: 240,
                             fit: BoxFit.fitWidth,
-                            placeholder: AssetImage('assets/loading.gif'),
-                            image: NetworkImage(
-                              '$IMAGE_URL${detailsViewModel.movieDetails.backdropPath}',
-                            ),
+                            errorWidget: (context, url, error) => Container(
+                                color: Colors.white24,
+                                width: 80,
+                                height: 120,
+                                child: Center(
+                                    child: Icon(
+                                  Icons.error,
+                                  color: Colors.red,
+                                ))),
+                            placeholder: (context, url) => Container(
+                                width: double.infinity,
+                                height: 240,
+                                child: Image.asset('assets/loading.gif')),
+                            imageUrl:
+                                '$IMAGE_URL${detailsViewModel.movieDetails.backdropPath}',
                           ),
                         ),
                         Container(

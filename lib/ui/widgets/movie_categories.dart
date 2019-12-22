@@ -1,4 +1,5 @@
 import 'package:cinematic/core/models/movie_model.dart';
+import 'package:cinematic/ui/screens/search_screen.dart';
 import 'package:cinematic/ui/values/values.dart';
 import 'package:cinematic/ui/widgets/movie_card.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,12 @@ class MovieCategories extends StatelessWidget {
                               margin: EdgeInsets.only(right: 16, left: 4),
                               child: InkWell(
                                 onTap: () {
-                                  print('see all');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SearchScreen(),
+                                    ),
+                                  );
                                 },
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,

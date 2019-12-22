@@ -43,7 +43,9 @@ class CustomSearchDelegate extends SearchDelegate {
       color: BACKGROUND_GREY,
       child: homeViewModel.searching
           ? Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                backgroundColor: FULL_STAR,
+              ),
             )
           : homeViewModel.noMovie
               ? Container(

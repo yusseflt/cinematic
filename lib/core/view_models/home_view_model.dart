@@ -41,7 +41,8 @@ class HomeViewModel extends ChangeNotifier {
     try {
       var response = await _api.getNowPlaying(page);
       if (response is ServiceResponse) {
-        nowPlayingList = response.results;
+        nowPlayingList.addAll(List.generate(
+            response.results.length, (index) => response.results[index]));
       }
     } catch (e) {
       print(e);
@@ -62,14 +63,14 @@ class HomeViewModel extends ChangeNotifier {
       print(e);
     }
     notifyListeners();
-    // print(popularMoviesList.length);
   }
 
   Future<void> getTopRated(int page) async {
     try {
       var response = await _api.getTopRated(page);
       if (response is ServiceResponse) {
-        topRatedList = response.results;
+        topRatedList.addAll(List.generate(
+            response.results.length, (index) => response.results[index]));
       }
     } catch (e) {
       print(e);
@@ -81,7 +82,8 @@ class HomeViewModel extends ChangeNotifier {
     try {
       var response = await _api.getUpcomingMovies(page);
       if (response is ServiceResponse) {
-        upcomingMoviesList = response.results;
+        upcomingMoviesList.addAll(List.generate(
+            response.results.length, (index) => response.results[index]));
       }
     } catch (e) {
       print(e);
@@ -101,7 +103,6 @@ class HomeViewModel extends ChangeNotifier {
         if (response.totalPages == 0) {
           noMovie = true;
         }
-
         totalSearchPage = response.totalPages;
       }
     } catch (e) {
