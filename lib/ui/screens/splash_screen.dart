@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
               flex: 3,
               child: ScaleTransition(
                 scale: animation,
-                child: Image.asset('assets/LogoCinematicc.png'),
+                child: Image.asset('assets/LogoCinematic.png'),
               ),
             ),
             startLoading
