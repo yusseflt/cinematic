@@ -7,10 +7,6 @@ import 'package:http/http.dart' as http;
 class Api {
   final client = http.Client();
 
-  void dispose() {
-    client.close();
-  }
-
   Future<dynamic> getNowPlaying(int page) async {
     try {
       var response = await client
@@ -18,7 +14,7 @@ class Api {
 
       return serviceResponseFromJson(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return 'Erro';
     }
   }
@@ -30,7 +26,7 @@ class Api {
 
       return serviceResponseFromJson(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return 'Erro';
     }
   }
@@ -42,7 +38,7 @@ class Api {
 
       return serviceResponseFromJson(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return 'Erro';
     }
   }
@@ -54,7 +50,7 @@ class Api {
 
       return serviceResponseFromJson(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return 'Erro';
     }
   }
@@ -65,7 +61,7 @@ class Api {
 
       return movieDetailsModelFromJson(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return 'Erro';
     }
   }
@@ -74,9 +70,10 @@ class Api {
     try {
       var response = await client.get(
           '$API_URL/search/movie?api_key=$API_KEY&query=$query&page=$page');
+
       return searchResponseFromJson(response.body);
     } catch (e) {
-      print(e);
+      // print(e);
       return 'Erro';
     }
   }

@@ -35,6 +35,8 @@ class CustomSearchDelegate extends SearchDelegate {
     final homeViewModel = Provider.of<HomeViewModel>(context);
 
     if (oldQuery != query && query != '') {
+      homeViewModel.searchList = List();
+      homeViewModel.actualPage = 1;
       homeViewModel.searchMovie(query, 1);
       oldQuery = query;
     }

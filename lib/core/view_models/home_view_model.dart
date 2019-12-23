@@ -92,7 +92,6 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   Future<void> searchMovie(String query, int page) async {
-    searchList = List();
     try {
       noMovieFound = false;
       searching = true;

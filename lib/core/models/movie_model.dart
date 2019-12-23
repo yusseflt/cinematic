@@ -41,7 +41,7 @@ class Movie {
         posterPath: json["poster_path"],
         adult: json["adult"],
         overview: json["overview"],
-        releaseDate: DateTime.tryParse(json["release_date"]),
+        releaseDate: DateTime.tryParse(json["release_date"] ?? ''),
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
         originalTitle: json["original_title"],
