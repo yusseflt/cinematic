@@ -1,17 +1,30 @@
 # Cinematic
+Cinematic é um aplicativo desenvolvido em Flutter para o desafio de Desenvolvedor Mobile da empresa Ahgora. O desafio consiste no desenvolvimento de uma aplicação Mobile, utilizando a Api do MovieDB e com uma interface pré-definida.
 
-Cinematic é um aplicativo desenvolvido em Flutter para o desafio de Desenvolvedor Mobile da empresa Ahgora. 
+## Rodando o projeto
+O aplicativo foi desenvolvido na versão 1.13.4 do Flutter e testado nos modelos Galaxy S7 e Galaxy A9.
 
+Pode ser executado de duas maneiras, utilizando o comando padrão:
 
-## Começando
+	$ flutter run
 
-This project is a starting point for a Flutter application.
+Ou com a execução para versão release, para obter uma melhor performance:
 
-A few resources to get you started if this is your first Flutter project:
+	$ flutter run --release
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Telas
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+O aplicativo possui quatro telas:
+
+![MockUp](https://i.imgur.com/E6RetIA.jpg)
+
+### Home
+A primeira tela é a Home, onde serão encontrados os principais filmes que estão em cartaz, os mais populares, os melhores avaliados e os em breve.
+### All Movies
+A segunda tela contém a lista de todos os filmes por critério de popularidade.
+
+### Detalhes de filme
+A terceira tela contém as informações detalhadas de um filme específico escolhido pelo usuário. 
+### Busca
+A quarta tela é a tela de busca.
+
