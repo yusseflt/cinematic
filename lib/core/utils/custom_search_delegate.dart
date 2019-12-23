@@ -47,11 +47,11 @@ class CustomSearchDelegate extends SearchDelegate {
                 backgroundColor: FULL_STAR,
               ),
             )
-          : homeViewModel.noMovie
+          : homeViewModel.noMovieFound
               ? Container(
                   child: Center(
                     child: Text(
-                      'No movie was found :(',
+                      'No movies found :(',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

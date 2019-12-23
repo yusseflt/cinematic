@@ -27,14 +27,20 @@ dependencies:
   http: ^0.12.0+2
   smooth_star_rating: ^1.0.3
   cached_network_image:  2.0.0-rc
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+  flutter_launcher_icons: ^0.7.4
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_icons:
+  image_path: 'assets/LogoCinematic.png'
+  android: true
+  ios: true
 
 # The following section is specific to Flutter.
 flutter:

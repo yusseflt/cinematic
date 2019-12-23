@@ -18,7 +18,7 @@ class HomeViewModel extends ChangeNotifier {
   int actualPage = 1;
 
   bool searching = false;
-  bool noMovie = false;
+  bool noMovieFound = false;
 
   int totalPagesPopular = 0;
   int totalSearchPage = 0;
@@ -93,7 +93,7 @@ class HomeViewModel extends ChangeNotifier {
 
   Future<void> searchMovie(String query, int page) async {
     try {
-      noMovie = false;
+      noMovieFound = false;
       searching = true;
       var response = await _api.searchMovie(query, page);
 
@@ -101,7 +101,7 @@ class HomeViewModel extends ChangeNotifier {
         searchList.addAll(List.generate(
             response.results.length, (index) => response.results[index]));
         if (response.totalPages == 0) {
-          noMovie = true;
+          noMovieFound = true;
         }
         totalSearchPage = response.totalPages;
       }

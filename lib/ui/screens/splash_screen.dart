@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cinematic/ui/screens/home_screen.dart';
 import 'package:cinematic/ui/values/values.dart';
 import 'package:flutter/material.dart';
@@ -39,9 +41,41 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animationController.forward();
     Future.delayed(Duration(milliseconds: 5000)).then((_) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      isConnectedToInternet();
     });
+  }
+
+  Future<void> isConnectedToInternet() async {
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      } else {
+        showDialog(
+          context: context,
+          child: AlertDialog(
+            title: Text('No internet connection found'),
+          ),
+        );
+      }
+    } on SocketException catch (_) {
+      showDialog(
+        context: context,
+        child: AlertDialog(
+          title: Text('Error'),
+          content: Text('No internet connection found'),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: () {
+                exit(0);
+              },
+              child: Text('Close app'),
+            )
+          ],
+        ),
+      );
+    }
   }
 
   @override
